@@ -1,0 +1,376 @@
+#hta-root {
+  all: initial;
+  color-scheme: light;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  position: relative;
+  z-index: 2147483647;
+}
+
+#hta-root * {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.hta-launcher {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 2147483647;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  border-radius: 8px;
+  background: #145c52;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 12px 32px rgba(20, 92, 82, 0.28);
+  cursor: pointer;
+}
+
+.hta-hidden {
+  display: none;
+}
+
+.hta-panel {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2147483647;
+  display: none;
+  width: min(420px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  border: 1px solid #d5dedb;
+  border-radius: 8px;
+  background: #fbfdfc;
+  color: #162522;
+  box-shadow: 0 24px 60px rgba(22, 37, 34, 0.2);
+}
+
+.hta-panel.hta-open {
+  display: block;
+}
+
+.hta-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid #e2e9e6;
+}
+
+.hta-kicker {
+  margin: 0 0 3px;
+  color: #57736c;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hta-header h2,
+.hta-card h3 {
+  margin: 0;
+  color: #162522;
+  letter-spacing: 0;
+}
+
+.hta-header h2 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.hta-card h3 {
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.hta-icon-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #cbd8d4;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #24433d;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.hta-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 16px 18px 10px;
+}
+
+.hta-primary,
+.hta-secondary {
+  min-height: 38px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  cursor: pointer;
+}
+
+.hta-primary {
+  background: #145c52;
+  color: #ffffff;
+}
+
+.hta-secondary {
+  background: #eef5f2;
+  border-color: #d4e2de;
+  color: #1f4f46;
+}
+
+/* In the control strip, selected state should drive the highlight color. */
+.hta-controls .hta-primary,
+.hta-controls .hta-secondary {
+  background: #eef5f2;
+  border-color: #d4e2de;
+  color: #1f4f46;
+}
+
+.hta-controls button.hta-selected,
+.hta-controls button[aria-pressed="true"] {
+  background: #145c52;
+  border-color: #0f473f;
+  color: #ffffff;
+}
+
+.hta-analyze {
+  grid-column: 1 / -1;
+}
+
+.hta-label {
+  display: block;
+  margin: 4px 18px 6px;
+  color: #3c5c55;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hta-textarea {
+  display: block;
+  width: calc(100% - 36px);
+  margin: 0 18px;
+  border: 1px solid #cbd8d4;
+  border-radius: 8px;
+  padding: 12px;
+  background: #ffffff;
+  color: #162522;
+  font-size: 13px;
+  line-height: 1.45;
+  resize: vertical;
+}
+
+.hta-status {
+  margin: 10px 18px 14px;
+  color: #57736c;
+  font-size: 12px;
+}
+
+.hta-source-label {
+  margin: -8px 18px 12px;
+  color: #3f5f57;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hta-result {
+  display: grid;
+  gap: 10px;
+  padding: 0 18px 18px;
+}
+
+.hta-dashboard {
+  border: 1px solid #dbe5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 12px;
+}
+
+.hta-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 10px;
+  color: #304c45;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hta-dashboard p {
+  margin: 10px 0 8px;
+  color: #33554d;
+  font-size: 13px;
+}
+
+.hta-dashboard-meta {
+  color: #5c7770;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.hta-card {
+  border: 1px solid #dbe5e1;
+  border-left: 4px solid #86a8a0;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 13px;
+}
+
+.hta-card p {
+  margin: 8px 0 0;
+  color: #314c46;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.hta-debug {
+  color: #5a746d;
+  font-size: 12px;
+}
+
+.hta-priority-high {
+  border-left-color: #c2412d;
+}
+
+.hta-priority-medium {
+  border-left-color: #b7791f;
+}
+
+.hta-priority-low {
+  border-left-color: #2f855a;
+}
+
+.hta-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.hta-pill,
+.hta-confidence,
+.hta-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  border-radius: 6px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hta-pill {
+  background: #eaf4f1;
+  color: #145c52;
+}
+
+.hta-confidence {
+  color: #57736c;
+  font-weight: 700;
+}
+
+.hta-confidence.hta-score-low {
+  background: #ecf8f1;
+  border: 1px solid #bfe6cf;
+  color: #2f855a;
+}
+
+.hta-confidence.hta-score-medium {
+  background: #fdf7e7;
+  border: 1px solid #f2deb0;
+  color: #8d6711;
+}
+
+.hta-confidence.hta-score-high {
+  background: #fbecec;
+  border: 1px solid #f0c2c2;
+  color: #a83830;
+}
+
+.hta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.hta-tags span {
+  background: #f1f5f4;
+  color: #3b5f56;
+}
+
+.hta-signals {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.hta-signals span {
+  display: block;
+  border-radius: 6px;
+  background: #f5f9f7;
+  border: 1px solid #e0e9e5;
+  color: #35564e;
+  padding: 7px 8px;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.hta-warning {
+  border: 1px solid #f0c7bd;
+  border-radius: 8px;
+  background: #fff5f2;
+  color: #8f2f1f;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.hta-reply {
+  white-space: pre-wrap;
+}
+
+.hta-card ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: #314c46;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.hta-actions {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.hta-actions .hta-primary,
+.hta-actions .hta-secondary {
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .hta-panel {
+    inset: 8px;
+    width: auto;
+    max-height: calc(100vh - 16px);
+  }
+
+  .hta-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .hta-actions {
+    grid-template-columns: 1fr;
+  }
+}

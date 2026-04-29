@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Handshake Message Triage Assistant",
+  "description": "Reads visible Handshake-style messages, classifies urgency, and drafts reply suggestions locally for demo use.",
+  "version": "1.0.0",
+  "action": {
+    "default_title": "Handshake Triage",
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.joinhandshake.com/*",
+        "https://joinhandshake.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "css": [
+        "src/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://*.joinhandshake.com/*",
+    "https://joinhandshake.com/*"
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Handshake Triage</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main>
+      <p class="kicker">Handshake Triage</p>
+      <h1>Message Assistant</h1>
+      <p class="body">Open a Handshake conversation, then use the HT button to scan, classify, and draft a response.</p>
+      <section>
+        <h2>Audience Mode</h2>
+        <div class="mode-row">
+          <button type="button" data-mode="student">Student</button>
+          <button type="button" data-mode="recruiter">Recruiter</button>
+        </div>
+      </section>
+      <section>
+        <h2>Demo Samples</h2>
+        <button type="button" data-sample="urgent">High: interview deadline</button>
+        <button type="button" data-sample="logistics">Medium: scheduling follow-up</button>
+        <button type="button" data-sample="risk">Risky: suspicious request</button>
+        <button type="button" data-sample="safe">Low: informational update</button>
+      </section>
+      <p class="status" id="popup-status">Samples open directly in the sidebar.</p>
+      <p class="privacy">Demo mode runs local rules only. No message text is sent to external services.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>
