@@ -16,6 +16,24 @@ Handshake Message Triage Assistant is a prototype Chrome extension that helps st
 - Student mode: "Helps students quickly detect high-impact messages and draft safe, timely responses."
 - Recruiter mode: "Helps recruiters prioritize candidate communication, scheduling, and follow-up actions."
 
+## Screenshots
+
+### Home
+
+![Handshake Triage Home](assets/home.jpg)
+
+### Dashboard
+
+![Handshake Triage Dashboard](assets/dashboard.jpg)
+
+### Message Scoring
+
+![Handshake Message Score](assets/dm_score.jpg)
+
+### Extension Icon
+
+![Handshake Triage Icon](assets/icon.jpg)
+
 ## Packaging Instructions (Load Unpacked)
 
 1. Open `chrome://extensions`.
