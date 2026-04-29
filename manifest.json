@@ -15,7 +15,9 @@
     {
       "matches": [
         "https://*.joinhandshake.com/*",
-        "https://joinhandshake.com/*"
+        "https://joinhandshake.com/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
       ],
       "js": [
         "src/content.js"
