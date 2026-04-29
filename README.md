@@ -1,10 +1,11 @@
 # Handshake Message Triage Assistant
 
-Handshake Message Triage Assistant helps students avoid missing important career opportunities by prioritizing recruiter, employer, alumni, and career-services messages directly inside the browser.
+Handshake Message Triage Assistant is a prototype Chrome extension that helps students avoid missing important career opportunities by prioritizing recruiter, employer, alumni, and career-services messages directly inside the browser.
 
 ## Working Status
 
 - Extension loads in Chrome (Manifest V3).
+- This is a prototype that uses deterministic local rules, not an external AI API.
 - Real-time visible Handshake DOM extraction is enabled.
 - Student/Recruiter mode toggle is available and persisted.
 - Demo sample mode remains separate from live scan mode.
@@ -20,13 +21,13 @@ Handshake Message Triage Assistant helps students avoid missing important career
 1. Open `chrome://extensions`.
 2. Turn on `Developer mode`.
 3. Click `Load unpacked`.
-4. Select the project root folder: `AI_Show` (the folder containing [manifest.json](/home/saif/Documents/AI_Show/manifest.json)).
-5. Open Handshake in a tab and launch the sidebar with `HT`.
+4. Select the project root folder for this repo (the folder containing [manifest.json](manifest.json)).
+5. Open Handshake in a tab and launch the extension popup from the `HT` button.
 
 ## Quick Usage
 
 1. Pick mode in popup: `Student` or `Recruiter`.
-2. In sidebar, click `Analyze Visible Messages` for live scan.
+2. In the panel, click `Analyze Visible Messages` for a live scan.
 3. Use `Sample: ...` buttons only when you want demo data.
 4. Use `Insert reply` or `Copy reply` for drafts.
 
@@ -46,6 +47,8 @@ Processing is local to the extension runtime:
 - No external API keys are required.
 - No message auto-send behavior exists.
 - Export summary excludes full raw text by default.
+
+This project is intended for prototype/demo use in the Chrome Web Store, so the copy should stay explicit that it is rule-based and not a live AI assistant.
 
 ## What Is Processed Locally
 

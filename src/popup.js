@@ -35,7 +35,7 @@ document.addEventListener("click", async (event) => {
       type: "HTA_OPEN_WITH_SAMPLE",
       payload: { text: samples[key], key, mode: currentMode }
     });
-    setStatus("Sample sent to sidebar.");
+    setStatus("Sample sent to the panel.");
   } catch (_error) {
     setStatus("Open a Handshake page first, then click a sample.");
   }
